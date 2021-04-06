@@ -1,0 +1,627 @@
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: "Varela Round", sans-serif;
+}
+
+body, html {
+  padding: 0;
+  margin: 0;
+  background-color: #f8f1f1;
+  scroll-behavior: smooth;
+  scroll-padding: 100px;
+}
+
+@media (min-width: 280px) {
+  nav {
+    position: fixed;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    width: 100%;
+    height: 80px;
+    background-color: #f8f1f1;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+  }
+  nav .container {
+    position: relative;
+    max-width: 1200px;
+    width: 100%;
+    height: 100%;
+  }
+  nav .container .logoContainer {
+    position: absolute;
+    left: -50px;
+    top: 0;
+    height: 100%;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    padding-top: 15px;
+  }
+  nav .container .logoContainer .logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #11698e 40%, #16c79a 110%);
+  }
+  nav .container .logoContainer .name {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 95px;
+  }
+  nav .container .logoContainer .name span:nth-child(1) {
+    color: #f8f1f1;
+  }
+  nav .container .navContainer {
+    position: absolute;
+    right: 30px;
+    top: 0;
+    width: 390px;
+    height: 100%;
+    display: none;
+    justify-content: space-around;
+    padding-top: 15px;
+  }
+  nav .container .navContainer button {
+    color: #19456b;
+    background: none;
+    border: none;
+    height: 50px;
+    min-width: 125px;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  nav .container .navContainer button:hover {
+    color: #16c79a;
+  }
+  nav .container .menuBtn {
+    position: absolute;
+    display: block;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 60px;
+    width: 60px;
+    border: none;
+    background-color: transparent;
+  }
+  nav .container .menuBtn .menuLine {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    border-radius: 10px;
+    transform: translateY(-50%);
+    height: 3px;
+    width: 40px;
+    background-color: #19456b;
+  }
+  nav .container .menuBtn .topLine {
+    top: 40%;
+  }
+  nav .container .menuBtn .bott {
+    width: 30px;
+    top: 60%;
+  }
+  nav .menu {
+    padding-top: 90px;
+    z-index: -1;
+    background-color: #f8f1f1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    max-width: 400px;
+    transform: translateX(100%);
+    text-align: center;
+  }
+  nav .menu .menuContainer {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+  }
+  nav .menu .menuContainer button {
+    position: relative;
+    background-color: transparent;
+    border: none;
+    overflow: hidden;
+    color: #f8f1f1;
+    border-radius: 50px;
+    margin: auto;
+    margin-bottom: 10px;
+    height: 80px;
+    width: 70%;
+    transform: scale(0.8) translateY(20px);
+    opacity: 0;
+  }
+  nav .menu .menuContainer button::before {
+    z-index: -1;
+    top: 0;
+    left: -50%;
+    content: "";
+    height: 100%;
+    width: 200%;
+    display: block;
+    position: absolute;
+    transition: 0.3s ease;
+    background: linear-gradient(135deg, #11698e 40%, #16c79a 90%);
+  }
+  nav .menu .menuContainer button:hover::before {
+    transform: translateX(10%);
+  }
+
+  main {
+    overflow-y: hidden;
+    height: 3000px;
+    width: 100%;
+  }
+  main .hero {
+    overflow: hidden;
+    height: 700px;
+    width: 100%;
+    max-width: 1500px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 55% 45%;
+  }
+  main .hero .iconContainer {
+    position: relative;
+  }
+  main .hero .iconContainer .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  main .hero .iconContainer .icon .iconSvg {
+    height: 450px;
+    width: 450px;
+  }
+  main .hero .heroContactContainer {
+    position: relative;
+  }
+  main .hero .heroContactContainer .heroText {
+    width: 80%;
+    color: #19456b;
+    font-size: 25px;
+    text-align: center;
+    top: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+  }
+  main .hero .heroContactContainer .heroText p {
+    padding: 0;
+  }
+  main .hero .heroContactContainer .heroButton {
+    font-size: 18px;
+    cursor: pointer;
+    position: absolute;
+    height: 60px;
+    width: 200px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50px;
+    border: none;
+    color: #f8f1f1;
+    overflow: hidden;
+  }
+  main .hero .heroContactContainer .heroButton::before {
+    z-index: -1;
+    top: 0;
+    left: -50%;
+    content: "";
+    height: 100%;
+    width: 200%;
+    display: block;
+    position: absolute;
+    transition: 0.3s ease;
+    background: linear-gradient(135deg, #11698e 40%, #16c79a 90%);
+  }
+  main .hero .heroContactContainer .heroButton:hover::before {
+    transform: translateX(10%);
+  }
+  main .sectionTitle {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+    height: 60px;
+    border-radius: 50px;
+  }
+  main .sectionTitle p {
+    left: 50%;
+    font-size: 30px;
+    color: #11698e;
+    width: 100%;
+    top: 50%;
+    margin: 0;
+    padding: 0;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    text-align: center;
+  }
+  main .sectionTitle .line {
+    position: absolute;
+    width: 35%;
+    height: 5px;
+    background-color: #16c79a;
+    border-radius: 50px;
+  }
+  main .sectionTitle .top {
+    top: -20px;
+    left: 0;
+  }
+  main .sectionTitle .bottom {
+    bottom: -20px;
+    right: 0;
+  }
+  main .whatWeCanDo {
+    padding-top: 50px;
+    padding-bottom: 100px;
+    height: 1150px;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+  }
+  main .whatWeCanDo .whatWeCanDoContent {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 33% 33% 33%;
+    grid-row-gap: 20px;
+  }
+  main .whatWeCanDo .whatWeCanDoContent .tile {
+    margin: auto;
+    overflow: hidden;
+    border-radius: 50px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    display: grid;
+    height: 300px;
+    width: 280px;
+    grid-template-rows: 80% 20%;
+    position: relative;
+  }
+  main .whatWeCanDo .whatWeCanDoContent .tile::before {
+    position: absolute;
+    content: "";
+    display: block;
+    height: 2px;
+    width: 70%;
+    background-color: #11698e;
+    border-radius: 50px;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.5;
+  }
+  main .whatWeCanDo .whatWeCanDoContent .tile .tileText {
+    font-size: 20px;
+    color: #19456b;
+    position: relative;
+  }
+  main .whatWeCanDo .whatWeCanDoContent .tile .tileText p {
+    text-align: center;
+    position: absolute;
+    margin: 0;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  main .whatWeCanDo .whatWeCanDoContent .tile .img {
+    position: relative;
+    background-color: transparent;
+    overflow: hidden;
+  }
+  main .whatWeCanDo .whatWeCanDoContent .tile .img::before {
+    width: 150%;
+    height: 100%;
+    position: absolute;
+    content: "";
+    display: none;
+    background-color: #16c79a;
+    opacity: 0.4;
+    position: absolute;
+    z-index: 1;
+    bottom: -120px;
+    left: -100px;
+    transform: rotate(20deg);
+  }
+  main .whatWeCanDo .whatWeCanDoContent .tile .img svg {
+    z-index: 5;
+    position: absolute;
+    width: 280px;
+    height: 200px;
+  }
+  main .whatWeCanDo .whatWeCanDoContent .toLeft {
+    grid-template-columns: 100%;
+    grid-template-rows: 70% 30%;
+  }
+  main .whatWeCanDo .whatWeCanDoContent .toLeft .img::before {
+    left: auto;
+    right: 10%;
+  }
+  main .whatWeCanDo .whatWeCanDoContent .toRight {
+    grid-template-columns: 100%;
+    grid-template-rows: 30% 70%;
+  }
+  main .whatWeCanDo .whatWeCanDoContent .toRight .img::before {
+    transform: rotate(-20deg);
+    left: 40px;
+    bottom: -110px;
+  }
+  main .whatWeCanDo .whatWeCanDoContent .toRight::before {
+    top: 30%;
+  }
+  main .projects {
+    padding-top: 80px;
+    height: 600px;
+    width: 100%;
+    overflow: hidden;
+  }
+  main .projects .splide {
+    height: 400px;
+    width: 80%;
+    max-width: 700px;
+    min-width: 280px;
+    margin: auto;
+    overflow: visible;
+  }
+  main .projects .splide .splide__track {
+    position: relative;
+    height: 100%;
+    overflow: visible;
+  }
+  main .projects .splide .splide__track .splide__list {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  main .projects .splide .splide__track .splide__list .splide__slide {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+  }
+  main .projects .splide .splide__track .splide__list .splide__slide .slideElement {
+    height: 90%;
+    width: 500px;
+    border-radius: 50px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: 0.3s ease;
+    transform: scale(0.7);
+    opacity: 0.5;
+    text-align: center;
+    color: #19456b;
+    position: relative;
+  }
+  main .projects .splide .splide__track .splide__list .splide__slide .slideElement .projectHolder {
+    width: 100%;
+    height: 50%;
+    position: relative;
+  }
+  main .projects .splide .splide__track .splide__list .splide__slide .slideElement .projectHolder .projectLink {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  main .projects .splide .splide__track .splide__list .splide__slide .slideElement .projectHolder .projectLink button {
+    position: relative;
+    height: 50px;
+    width: 150px;
+    border: none;
+    border-radius: 50px;
+    background-color: transparent;
+    cursor: pointer;
+    overflow: hidden;
+    color: white;
+  }
+  main .projects .splide .splide__track .splide__list .splide__slide .slideElement .projectHolder .projectLink button::before {
+    z-index: -1;
+    top: 0;
+    left: -50%;
+    content: "";
+    height: 100%;
+    width: 200%;
+    display: block;
+    position: absolute;
+    transition: 0.3s ease;
+    background: linear-gradient(135deg, #11698e 40%, #16c79a 90%);
+  }
+  main .projects .splide .splide__track .splide__list .splide__slide .slideElement .projectHolder .projectLink button:hover::before {
+    transform: translateX(10%);
+  }
+  main .projects .splide .splide__track .splide__list .splide__slide .slideElement .projectHolder .projectText {
+    font-size: 18px;
+    width: 100%;
+    position: absolute;
+    top: 22.5%;
+    transform: translateY(-50%);
+    padding: 10px;
+  }
+  main .projects .splide .splide__track .splide__list .splide__slide .slideElement .projectHolder .projectText p {
+    margin-top: -10px;
+  }
+  main .projects .splide .splide__track .splide__list .splide__slide .slideElement .projectHolder img {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    height: 150px;
+  }
+  main .projects .splide .splide__track .splide__list .splide__slide.is-active .slideElement {
+    transform: scale(1);
+    transition: 0.3s ease;
+    opacity: 1;
+  }
+  main .projects .splide .splide__arrows .splide__arrow {
+    background-color: transparent;
+  }
+  main .projects .splide .splide__arrows .splide__arrow svg {
+    width: 60px;
+  }
+  main .projects .splide .splide__arrows .splide__arrow svg path {
+    transform: translateX(-10px);
+    fill: #19456b;
+  }
+  main .projects .splide .splide__arrows .prev, main .projects .splide .splide__arrows .next {
+    transform: scale(1.5);
+    transition: 0.3s ease;
+  }
+  main .projects .splide .splide__arrows .prev:hover, main .projects .splide .splide__arrows .next:hover {
+    transform: scaleX(1.05) scaleY(0.85) scale(1.8);
+  }
+  main .projects .splide .splide__pagination__page {
+    transform: scale(1.5) translateY(20px);
+    background-color: #19456b;
+    opacity: 0.5;
+    margin: 5px;
+    transition: 0.3s ease;
+  }
+  main .projects .splide .splide__pagination__page.is-active {
+    background-color: #16c79a;
+    transform: translateY(25px) scale(1.8);
+  }
+  main .technologies {
+    padding-top: 70px;
+    padding-bottom: 50px;
+    height: 350px;
+    width: 100%;
+  }
+  main .technologies .techContainer {
+    margin: auto;
+    width: 100%;
+    max-width: 1100px;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, 12%);
+    grid-template-rows: 90%;
+    grid-column-gap: 10px;
+    justify-content: center;
+  }
+  main .technologies .techContainer .tech {
+    position: relative;
+  }
+  main .technologies .techContainer .tech .techName {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    color: #19456b;
+  }
+  main .technologies .techContainer .tech .techName p {
+    margin: 0;
+    padding: 0;
+  }
+  main .technologies .techContainer .tech .techBottom {
+    bottom: 10px;
+  }
+  main .technologies .techContainer .tech .techTop {
+    top: 10px;
+  }
+  main .technologies .techContainer .tech .imgContainer {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    background-color: #f8f1f1;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  main .technologies .techContainer .tech .imgContainer img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.8;
+    width: 60px;
+    height: 60px;
+  }
+  main .technologies .techContainer .tech .imgTop {
+    top: 25px;
+  }
+  main .technologies .techContainer .tech .imgBottom {
+    bottom: 25px;
+  }
+}
+@media (min-width: 1025px) {
+  nav .container .logoContainer {
+    left: 0;
+  }
+  nav .container .navContainer {
+    display: block;
+  }
+  nav .container .menuBtn {
+    display: none;
+  }
+
+  main .hero {
+    height: 500px;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
+  }
+  main .hero .iconContainer .icon .iconSvg {
+    height: 600px;
+    width: 600px;
+  }
+  main .hero .heroContactContainer .heroText {
+    top: 110px;
+  }
+  main .hero .heroContactContainer .heroButton {
+    bottom: 110px;
+  }
+  main .whatWeCanDo {
+    height: 750px;
+  }
+  main .whatWeCanDo .whatWeCanDoContent .tile {
+    grid-template-rows: 100%;
+    width: 550px;
+    height: 150px;
+  }
+  main .whatWeCanDo .whatWeCanDoContent .tile::before {
+    height: 70%;
+    width: 2px;
+    top: 50%;
+  }
+  main .whatWeCanDo .whatWeCanDoContent .tile .img::before {
+    display: block;
+  }
+  main .whatWeCanDo .whatWeCanDoContent .tile .img svg {
+    width: 230px;
+    height: 150px;
+  }
+  main .whatWeCanDo .whatWeCanDoContent .toLeft {
+    grid-template-columns: 40% 60%;
+  }
+  main .whatWeCanDo .whatWeCanDoContent .toLeft::before {
+    left: 40%;
+  }
+  main .whatWeCanDo .whatWeCanDoContent .toRight {
+    grid-template-columns: 60% 40%;
+  }
+  main .whatWeCanDo .whatWeCanDoContent .toRight::before {
+    left: 60%;
+  }
+}
+:focus {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: #19456b;
+}
+a p {
+  text-decoration: none;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,757 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+$Green : #16c79a;
+$DarkBlue : #19456b;
+$LightBlue : #11698e;
+$White : #f8f1f1;
+$ButtonGradient: linear-gradient(135deg, $LightBlue 40%, $Green 90%);
+
+*{
+  box-sizing: border-box;
+  font-family: 'Varela Round', sans-serif;
+}
+
+body,html{
+  padding: 0;
+  margin: 0;
+  background-color: $White;
+  scroll-behavior: smooth;
+  scroll-padding: 100px;
+}
+
+@media (min-width: 280px){
+  nav{
+    position: fixed;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    width: 100%;
+    height: 80px;
+    background-color: $White;
+    box-shadow: 0px 0px 2px rgba(0,0,0, 0.2);
+
+    .container {
+      position: relative;
+      max-width: 1200px;
+      width: 100%;
+      height: 100%;
+
+      .logoContainer{
+        position: absolute;
+        left: -50px;
+        top: 0;
+        height: 100%;
+        width: 200px;
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        padding-top: 15px;
+
+        .logo{
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          background: linear-gradient(135deg, $LightBlue 40%, $Green 110%);
+        }
+
+        .name{
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 95px;
+
+          span{
+            &:nth-child(1){
+              color: $White
+            }
+          }
+        }
+      }
+
+      .navContainer{
+        position: absolute;
+        right: 30px;
+        top: 0;
+        width: 390px;
+        height: 100%;
+        display: none;
+        justify-content: space-around;
+        padding-top: 15px;
+
+        button{
+          color: $DarkBlue;
+          background: none;
+          border: none;
+          height: 50px;
+          min-width: 125px;
+          cursor: pointer;
+          overflow: hidden;
+
+          &:hover{
+            color: $Green;
+          }
+        }
+      }
+
+      .menuBtn{
+        position: absolute;
+        display: block;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 60px;
+        width: 60px;
+        border: none;
+        background-color: transparent;
+
+        .menuLine{
+          position: absolute;
+          top: 50%;
+          right: 5px;
+          border-radius: 10px;
+          transform: translateY(-50%);
+          height: 3px;
+          width: 40px;
+          background-color: $DarkBlue;
+        }
+
+        .topLine{
+          top: 40%;
+        }
+
+        .bott{
+          width: 30px;
+          top: 60%;
+        }
+      }
+    }
+
+    .menu{
+      padding-top: 90px;
+      z-index: -1;
+      background-color: $White;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: 100%;
+      max-width: 400px;
+      transform: translateX(100%);
+      text-align: center;
+
+      .menuContainer{
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        transform: translateY(-50%);
+
+        button{
+          position: relative;
+          background-color: transparent;
+          border: none;
+          overflow: hidden;
+          color: $White;
+          border-radius: 50px;
+          margin: auto;
+          margin-bottom: 10px;
+          height: 80px;
+          width: 70%;
+          transform: scale(0.8) translateY(20px);
+          opacity: 0;
+
+          &::before{
+            z-index: -1;
+            top: 0;
+            left: -50%;
+            content: '';
+            height: 100%;
+            width: 200%;
+            display: block;
+            position: absolute;
+            transition: .3s ease;
+            background: $ButtonGradient;
+          }
+  
+          &:hover::before{
+            transform: translateX(10%);
+          }
+        }
+      }
+    }
+  }
+
+  main{
+    overflow-y: hidden;
+    height: 3000px;
+    width: 100%;
+
+    .hero{
+      overflow: hidden;
+      height: 700px;
+      width: 100%;
+      max-width: 1500px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: 55% 45%;
+
+      .iconContainer{
+
+        position: relative;
+
+        .icon{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+
+          .iconSvg{
+            height: 450px;
+            width: 450px;
+          }
+        }
+      }
+
+      .heroContactContainer{
+        position: relative;
+
+        .heroText{
+          width: 80%;
+          color: $DarkBlue;
+          font-size: 25px;
+          text-align: center;
+          top: 90px;
+          left: 50%;
+          transform: translateX( -50%);
+          position: absolute;
+
+          p{
+            padding: 0;
+          }
+        }
+
+        .heroButton{
+          font-size: 18px;
+          cursor: pointer;
+          position: absolute;
+          height: 60px;
+          width: 200px;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          border-radius: 50px;
+          border: none;
+          color: $White;
+          overflow: hidden;
+
+          &::before{
+            z-index: -1;
+            top: 0;
+            left: -50%;
+            content: '';
+            height: 100%;
+            width: 200%;
+            display: block;
+            position: absolute;
+            transition: .3s ease;
+            background: $ButtonGradient;
+          }
+
+          &:hover::before{
+            transform: translateX(10%);
+          }
+        }
+      }
+    }
+
+    .sectionTitle{
+      position: relative;
+      width: 80%;
+      max-width: 600px;
+      margin: auto;
+      height: 60px;
+      border-radius: 50px;
+
+      p{
+        left: 50%;
+        font-size: 30px;
+        color: $LightBlue;
+        width: 100%;
+        top: 50%;
+        margin: 0;
+        padding: 0;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        text-align: center;
+      }
+
+      .line{
+        position: absolute;
+        width: 35%;
+        height: 5px;
+        background-color: $Green;
+        border-radius: 50px;
+      }
+
+      .top{
+        top: -20px;
+        left: 0;
+      }
+
+      .bottom{
+        bottom: -20px;
+        right: 0;
+      }
+
+    }
+
+    .whatWeCanDo{
+      padding-top: 50px;
+      padding-bottom: 100px;
+      height: 1150px;
+      width: 100%;
+      max-width: 600px;
+      margin: auto;
+
+      .whatWeCanDoContent{
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-columns:100%;
+        grid-template-rows: 33% 33% 33%;
+        grid-row-gap: 20px;
+
+          .tile{
+            margin: auto;
+            overflow: hidden;
+            border-radius: 50px;
+            box-shadow: 0px 10px 20px rgba(0,0,0, 0.1);
+            display: grid;
+            height: 300px;
+            width: 280px;
+            grid-template-rows: 80% 20%; 
+            position: relative;
+
+            &::before{
+              position: absolute;
+              content: '';
+              display: block;
+              height: 2px;
+              width: 70%;
+              background-color: $LightBlue;
+              border-radius: 50px;
+              top: 70%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              opacity: 0.5;
+            }
+
+            .tileText{
+              font-size: 20px;
+              color: $DarkBlue;
+              position: relative;
+  
+              p{
+                text-align: center;
+                position: absolute;
+                margin: 0;
+                width: 100%;
+                top: 50%;
+                transform: translateY(-50%);
+              }
+            }
+
+            .img{ 
+              position: relative;
+              background-color: transparent;
+              overflow: hidden;
+  
+              &::before{
+                width: 150%;
+                height: 100%;
+                position: absolute;
+                content: '';
+                display: none;
+                background-color: $Green;
+                opacity: 0.4;
+                position: absolute;
+                z-index: 1;
+                bottom: -120px;
+                left: -100px;
+                transform: rotate(20deg);
+              }
+  
+              svg{
+                z-index: 5;
+                position: absolute;
+                width: 280px;
+                height: 200px;
+              }
+            }
+          }
+
+          
+        .toLeft{
+          grid-template-columns: 100%;
+          grid-template-rows: 70% 30%;
+  
+          .img{
+            &::before{
+              left: auto;
+              right: 10%;
+            }
+          }
+        }
+
+        .toRight{
+          grid-template-columns: 100%;
+          grid-template-rows: 30% 70%;
+
+          .img{
+            &::before{
+              transform: rotate(-20deg);
+              left: 40px;
+              bottom: -110px;
+            }
+          }
+
+          &::before{
+            top: 30%;
+          }
+        } 
+      }
+    }
+
+    .projects{
+      padding-top: 80px;
+      height: 600px;
+      width: 100%;
+      overflow: hidden;
+
+      .splide{
+        height: 400px;
+        width: 80%;
+        max-width: 700px;
+        min-width: 280px;
+        margin: auto;
+        overflow: visible;
+        
+
+        .splide__track{
+          position: relative;
+          height: 100%;
+          overflow: visible;
+
+          .splide__list{
+            left: 50%;
+            transform: translateX(-50%);
+            
+            .splide__slide{
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              vertical-align: middle;
+              
+              .slideElement{
+                height: 90%;
+                width: 500px;
+                border-radius: 50px;
+                box-shadow: 0px 10px 20px rgba(0,0,0, 0.1);
+                text-align: center;
+                transition: .3s ease;
+                transform: scale(0.7);
+                opacity: 0.5;
+                text-align: center;
+                color: $DarkBlue;
+                position: relative;
+
+                .projectHolder{
+                  width: 100%;
+                  height: 50%;
+                  position: relative;
+
+                  .projectLink{
+                    position: absolute;
+                    top: 75%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    
+                    button{
+                      position: relative;
+                      height: 50px;
+                      width: 150px;
+                      border: none;
+                      border-radius: 50px;
+                      background-color: transparent;
+                      cursor: pointer; 
+                      overflow: hidden;
+                      color: white;
+
+                      &::before{
+                        z-index: -1;
+                        top: 0;
+                        left: -50%;
+                        content: '';
+                        height: 100%;
+                        width: 200%;
+                        display: block;
+                        position: absolute;
+                        transition: .3s ease;
+                        background: $ButtonGradient;
+                      }
+
+                      &:hover::before{
+                        transform: translateX(10%);
+                      }
+                    }
+                  }
+
+                  .projectText{
+                    font-size: 18px;
+                    width: 100%;
+                    position: absolute;
+                    top: 22.5%;
+                    transform: translateY(-50%);
+                    padding: 10px;
+
+                    p{
+                      margin-top: -10px;
+                    }
+                  }
+                  
+                  img{
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    position: absolute;
+                    height: 150px;
+                  }
+                }
+              }
+            }
+
+            .splide__slide.is-active{
+              .slideElement{
+                transform: scale(1);
+                transition: .3s ease;
+                opacity: 1;
+              }
+            }
+          }
+        }
+
+        .splide__arrows{
+          .splide__arrow{
+            background-color: transparent;
+  
+            svg{
+
+              width: 60px;
+              path{
+                transform: translateX(-10px);
+                fill: $DarkBlue;
+              }
+            }
+          }
+
+          .prev, .next{
+            transform: scale(1.5);
+            transition: .3s ease;
+
+            &:hover{
+              transform: scaleX(1.05) scaleY(0.85) scale(1.8);
+            }
+          }
+
+        }
+
+        .splide__pagination__page{
+          transform: scale(1.5) translateY(20px);
+          background-color: $DarkBlue;
+          opacity: 0.5;
+          margin: 5px;
+          transition: .3s ease;
+        }
+
+        .splide__pagination__page.is-active{
+          background-color: $Green;
+          transform: translateY(25px) scale(1.8);
+        }
+      }
+    }
+
+    .technologies{
+      padding-top: 70px;
+      padding-bottom: 50px;
+      height: 350px;
+      width: 100%;
+
+      .techContainer{
+        margin: auto;
+        width: 100%;
+        max-width: 1100px;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(7, 12%);
+        grid-template-rows: 90%;
+        grid-column-gap: 10px;
+        justify-content: center;
+
+        .tech{
+          position: relative;
+
+          .techName{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            text-align: center;
+            color: $DarkBlue;
+            
+            p{
+              margin: 0;
+              padding: 0;
+            }
+          }
+
+          .techBottom{
+            bottom: 10px;
+          }
+
+          .techTop{
+            top: 10px;
+          }
+         
+          .imgContainer{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 100px;
+            border-radius: 100px;
+            background-color: $White;
+            box-shadow: 0px 10px 20px rgba(0,0,0, 0.1);
+
+            img{
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              opacity: 0.8;
+              width: 60px;
+              height: 60px;
+            }
+          }
+
+          .imgTop{
+            top: 25px;
+          }
+
+          .imgBottom{
+            bottom: 25px;
+          }
+
+        }
+      }
+    }
+  }
+}
+
+@media(min-width: 1025px){
+  nav{
+    .container{
+      .logoContainer{
+        left: 0;
+      }
+      .navContainer{
+        display: block;
+      }
+
+      .menuBtn{
+        display: none;
+      }
+    }
+  }
+  main{
+    .hero{
+      height: 500px;
+      grid-template-columns: 50% 50%;
+      grid-template-rows: 100%;
+
+      .iconContainer{
+        .icon{
+          .iconSvg{
+            height: 600px;
+            width: 600px;
+          }
+        }
+      }
+
+      .heroContactContainer{
+        .heroText{
+          top: 110px;
+        }
+        .heroButton{
+          bottom: 110px;
+        }
+      }
+    }
+
+    .whatWeCanDo{
+      height: 750px;
+      .whatWeCanDoContent{
+        .tile{
+          grid-template-rows: 100%;
+          width: 550px;
+          height: 150px;
+
+          &::before{
+            height: 70%;
+            width: 2px;
+            top: 50%;
+          }
+
+          .img{
+            &::before{
+              display: block;
+            }
+
+            svg{
+              width: 230px;
+              height: 150px;
+            }
+          }
+        }
+
+        .toLeft{
+          grid-template-columns: 40% 60%;
+          
+          &::before{
+            left: 40%;
+          }
+        }
+
+        .toRight{
+          grid-template-columns: 60% 40%;
+
+          &::before{
+            left: 60%;
+          }
+        }
+      }
+    }
+  }
+}
+
+:focus{
+  outline: none;
+}
+
+a{
+  text-decoration: none;
+  color: $DarkBlue;
+  p{
+    text-decoration: none;
+  }
+}
