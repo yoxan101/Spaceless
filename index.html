@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="./images/logo.png">
+    <meta name="description" content="Szukasz strony internetowej dla swojej działalności? Dobrze trafiłeś!. Prosta strona dla twych potrzeb">
+    <meta name=”robots” content="index, follow">
+    <link rel="icon" href="./images/logo.PNG">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
-    <link rel="stylesheet" href="./style/style.css?ver=2.0">
+    <link rel="stylesheet" href="./style/style.css?ver=3.0">
     <title>SpaceLess</title>
 </head>
 <body id="scroll">
@@ -1740,7 +1742,7 @@
                 </div>
                 <div class="tech">
                     <div class='techName techBottom'>
-                        <p>Środowisko Node.js</p>
+                        <p>Środowisko<br>Node.js</p>
                     </div>
                     <div class='imgContainer imgTop'>
                         <img src='/images/techs/Node.js_logo.svg'>
@@ -1770,10 +1772,37 @@
         </div>
         <section class='contact'>
             <div class='form'>
-
+                <h1 style="text-align: center;">Formularz Zgłoszeniowy</h1>
+                <div class='formTitle'>
+                    <svg fill="#000000" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" width="30px" height="30px">    <path d="M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,2h18c1.105,0,2-0.895,2-2V6C26,4.895,25.105,4,24,4z M13,10H7 c-0.552,0-1-0.448-1-1c0-0.552,0.448-1,1-1h6c0.552,0,1,0.448,1,1C14,9.552,13.552,10,13,10z M23,11h-6c-0.552,0-1-0.448-1-1V8 c0-0.552,0.448-1,1-1h6c0.552,0,1,0.448,1,1v2C24,10.552,23.552,11,23,11z M13,16H7c-0.552,0-1-0.448-1-1c0-0.552,0.448-1,1-1h6 c0.552,0,1,0.448,1,1C14,15.552,13.552,16,13,16z M23,22h-6c-0.552,0-1-0.448-1-1c0-0.552,0.448-1,1-1h6c0.552,0,1,0.448,1,1 C24,21.552,23.552,22,23,22z M23,17h-6c-0.552,0-1-0.448-1-1v-2c0-0.552,0.448-1,1-1h6c0.552,0,1,0.448,1,1v2 C24,16.552,23.552,17,23,17z M13,23h-2c-0.552,0-1-0.448-1-1v-2c0-0.552,0.448-1,1-1h2c0.552,0,1,0.448,1,1v2 C14,22.552,13.552,23,13,23z"/></svg>
+                </div>
+                <form name="form" method="POST" action="send.php">
+                    <input placeholder="Imię" id='name' type='text' name='name' required><br>
+                    <input placeholder="Nazwisko" id='lastname' type='text' name='lastname' required><br>
+                    <input placeholder="E-Mail"id='email' type='email' name='email' required><br>
+                    <input placeholder="Numer Telefonu" id='phone' type='number' name='phone' required><br>
+                    <textarea placeholder="Treść wiadomości..." id='message' name='message' required></textarea><br>
+                    <button name='submit' type='submit'>Wyślij</button>
+                </form>
             </div>
             <div class='details'>
-
+                <div class='detailsContainer'>
+                    <h1>Dane Kontaktowe</h1>
+                    <p>
+                        E-Mail: kontakt@spaceless.pl
+                    </p>
+                    <p>
+                        Telefon: 509-187-087
+                    </p>
+                    <p>
+                        Social Media:
+                    </p>
+                    <p>
+                       <a href='https://www.linkedin.com/in/sebastian-bedryj-7707b7191/' target="_blank"><img src="https://img.icons8.com/cute-clipart/64/000000/linkedin.png"/></a>
+                       <a href='https://www.facebook.com/SpaceLess-110186021176947' target="_blank"><img src="https://img.icons8.com/cute-clipart/64/000000/facebook-new.png"/></a>
+                    </p>
+                    
+                </div>
             </div>
         </section>
     </main>
